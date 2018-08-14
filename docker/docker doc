@@ -1,0 +1,24 @@
+## 一个程序的运行dockerfile
+## 一个服务的运行compose
+如何负载均衡， 启动多个web分片任务时， 端口如何控制？
+应该是多个contain， 测试果然是多个id
+
+
+通过docker swarm运行一个服务 查看结果。猜想k8s 应该是代替swarm的东西， 用来管理docker多台机器部署运行可视化。
+```
+[root@fafafa opt]# docker ps
+CONTAINER ID        IMAGE                    COMMAND                  CREATED             STATUS              PORTS               NAMES
+fe9d68c02f03        helloworld:first_hello   "python helloworld.py"   48 seconds ago      Up 46 seconds                           manyhello_web.3.6red21w7p77o4ewcd42l04y8h
+793ce169115d        helloworld:first_hello   "python helloworld.py"   49 seconds ago      Up 47 seconds                           manyhello_web.5.epvh7iq2hoo9f8eqjpgwduoj3
+abe61d187c31        helloworld:first_hello   "python helloworld.py"   50 seconds ago      Up 48 seconds                           manyhello_web.4.iqwuqckekudxzweycliaxyfsb
+5a200081413a        helloworld:first_hello   "python helloworld.py"   50 seconds ago      Up 48 seconds                           manyhello_web.1.p5y6vecajb06v6m2aw08sg87o
+e1abb09b0707        helloworld:first_hello   "python helloworld.py"   50 seconds ago      Up 48 seconds                           manyhello_web.2.ks969mgdco36sq2cya89iocps
+```
+
+
+## 多台机器运行 swarm
+
+
+## stack 解决程序的依赖关系
+
+基本上一个完成的部署流程问题都解决,部分没有认真看。
